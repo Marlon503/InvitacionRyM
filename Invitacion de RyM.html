@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invitacion Raquel & Marlon </title>
+  
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💍</text></svg>">
+
+  <!-- Fuentes Elegantes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Dancing+Script:wght@600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Fondo Celeste y Ramos de Flores cayendo */
+/* FORZAR FONDO CELESTE Y MARCO DE ROSAS */
+body {
+  background: linear-gradient(135deg, #a7c2d0 0%, #87a7b8 50%, #6e90a2 100%) !important;
+}
+
+/* MARCO DORADO Y BORDE ALREDEDOR DE LA TARJETA */
+.card {
+  border: 2px solid #d4af37 !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25), inset 0 0 0 2px rgba(255, 255, 255, 0.9) !important;
+}
+
+/* CORRECCIÓN PARA ASEGURAR QUE LOS RAMOS Y FLORES SEAN VISIBLES */
+.flower-bouquet {
+  position: absolute !important;
+  top: -15% !important;
+  font-size: 28px !important;
+  opacity: 0.9 !important;
+  z-index: 10 !important;
+  animation: fall 8s linear infinite, sway 4.5s ease-in-out infinite alternate !important;
+}
+
+    :root {
+      --bg-color: #fcfbfa;
+      --card-bg: rgba(255, 255, 255, 0.92);
+      --primary: #8a624a;
+      --primary-dark: #624330;
+      --gold: #d4af37;
+      --accent-blue: #a3c4d8;
+      --text-dark: #2c2724;
+      --text-muted: #6b635c;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 25px 15px;
+      position: relative;
+      overflow-x: hidden;
+      
+      /* Fondo con la imagen ilustrada animada */
+      background: url('watermarked_img_16584582022678934882.png') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    /* Capa de suavizado para máxima legibilidad */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(252, 250, 248, 0.50);
+      backdrop-filter: blur(4px);
+      z-index: 1;
+    }
+
+    /* Lluvia de pétalos suaves y detalles florales */
+    .petals-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 10;
+      overflow: hidden;
+    }
+
+    .petal {
+      position: absolute;
+      top: -10%;
+      background: linear-gradient(135deg, #ffffff, #fdf6f0, #e8f3f8);
+      border-radius: 150% 0 150% 0;
+      opacity: 0.85;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+      animation: fall linear infinite, sway ease-in-out infinite alternate;
+    }
+
+    .flower-icon {
+      position: absolute;
+      top: -15%;
+      font-size: 22px;
+      opacity: 0.75;
+      animation: fall linear infinite, sway ease-in-out infinite alternate;
+    }
+
+    @keyframes fall {
+      0% { top: -10%; }
+      100% { top: 110%; }
+    }
+
+    @keyframes sway {
+      0% { transform: rotate(0deg) translateX(0px); }
+      100% { transform: rotate(180deg) translateX(35px); }
+    }
+
+    /* Tarjeta Principal */
+    .card {
+      position: relative;
+      z-index: 20;
+      background: var(--card-bg);
+      backdrop-filter: blur(14px);
+      width: 100%;
+      max-width: 560px;
+      padding: 50px 38px;
+      border-radius: 24px;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      text-align: center;
+    }
+
+    /* Adornos de Orquídeas celestes en las esquinas */
+    .card-corner {
+      position: absolute;
+      width: 90px;
+      height: 90px;
+      pointer-events: none;
+      opacity: 0.85;
+    }
+
+    .card-corner.top-left {
+      top: 15px;
+      left: 15px;
+      border-top: 2px solid var(--gold);
+      border-left: 2px solid var(--gold);
+      border-top-left-radius: 12px;
+    }
+
+    .card-corner.bottom-right {
+      bottom: 15px;
+      right: 15px;
+      border-bottom: 2px solid var(--gold);
+      border-right: 2px solid var(--gold);
+      border-bottom-right-radius: 12px;
+    }
+
+    .monogram {
+      font-family: 'Alex Brush', cursive;
+      font-size: 3.8rem;
+      color: var(--primary);
+      margin-bottom: 0px;
+      line-height: 1;
+    }
+
+    .welcome-title {
+      font-family: 'Alex Brush', cursive;
+      font-size: 3.2rem;
+      color: var(--primary);
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+
+    .welcome-subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 25px;
+      font-weight: 600;
+    }
+
+    /* Frase emotiva solicitada */
+    .quote-box {
+      margin: 20px 0 30px 0;
+      padding: 22px 25px;
+      background-color: rgba(163, 196, 216, 0.12);
+      border-left: 3px solid var(--accent-blue);
+      border-right: 3px solid var(--accent-blue);
+      border-radius: 12px;
+    }
+
+    .quote-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-style: italic;
+      line-height: 1.7;
+      color: var(--text-dark);
+      font-weight: 500;
+    }
+
+   .names-header {
+  font-family: 'Dancing Script', cursive !important;
+  font-size: 3.2rem !important;
+  font-weight: 700 !important;
+  color: #6b5b75 !important; /* Tono lila/morado elegante de la imagen */
+  margin: 25px 0 15px 0;
+  line-height: 1.2;
+}
+
+.names-header span {
+  display: block;
+  font-family: 'Dancing Script', cursive !important;
+  font-size: 2.2rem !important;
+  color: #6b5b75 !important;
+  font-weight: 600;
+  margin: 5px 0;
+}
+
+    .event-info {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      color: var(--text-muted);
+      margin-bottom: 30px;
+    }
+
+    .event-info strong {
+      display: block;
+      color: var(--primary-dark);
+      font-size: 1.45rem;
+      font-style: normal;
+      margin-top: 5px;
+    }
+
+    .divider {
+      width: 100px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 25px auto;
+    }
+
+    /* Formulario de confirmación RSVP */
+    .form-section {
+      text-align: left;
+      margin-top: 25px;
+    }
+
+    .form-section h3 {
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      color: var(--primary);
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    label {
+  display: block;
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: 1.05rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 6px;
+  color: var(--text-muted);
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 13px 15px;
+  border: 1px solid #e0d8d0;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.95);
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: 1.15rem !important;
+  font-weight: 500 !important;
+  color: var(--text-dark);
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+button.btn-submit {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: 1.15rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(138, 98, 74, 0.3);
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+    button.btn-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(138, 98, 74, 0.45);
+    }
+
+    /* Acciones alternativas para enviar correo directo */
+    .direct-email-option {
+      margin-top: 20px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    .direct-email-option a {
+      color: var(--primary-dark);
+      font-weight: 600;
+      text-decoration: underline;
+    }
+
+    /* Pantalla de Confirmación de Agradecimiento */
+    .thank-you-message {
+      display: none;
+      padding: 20px 10px;
+      animation: fadeIn 0.8s ease forwards;
+    }
+
+    .thank-you-message h2 {
+      font-family: 'Alex Brush', cursive;
+      font-size: 3.8rem;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .thank-you-card {
+      margin-top: 20px;
+      padding: 22px;
+      background-color: rgba(163, 196, 216, 0.15);
+      border-radius: 12px;
+      border: 1px dashed var(--gold);
+    }
+
+    .thank-you-card p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      line-height: 1.6;
+      color: var(--text-dark);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        padding: 38px 22px;
+      }
+      .welcome-title {
+        font-size: 2.6rem;
+      }
+      .quote-text {
+        font-size: 1.2rem;
+      }
+      .names-header {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Animación de Pétalos Blancos y Orquídeas de Fondo -->
+  <div class="petals-container" id="petals"></div>
+
+  <div class="card">
+    <div class="card-corner top-left"></div>
+    <div class="card-corner bottom-right"></div>
+
+    <h1 class="welcome-title">Bienvenidos</h1>
+    <div class="welcome-subtitle">A NUESTRA BODA</div>
+
+    <!-- Frase transcrita exactamente desde la imagen compartida -->
+    <div class="quote-box">
+      <p class="quote-text">
+        “Hoy seremos un solo corazón, una misma alegría y en los días de dificultad un mismo dolor, que el sentimiento de amor que hoy nos une se haga cada día más fuerte y nos mantenga unidos por siempre.”
+      </p>
+    </div>
+
+<div class="names-header">
+  <span>Raquel Esmeralda Turcios Alas</span>
+  <span>y</span>
+  <span>Marlon Mauricio Peña Merino</span>
+</div>
+
+    <div class="divider"></div>
+
+    <div class="event-info">
+      ¡Acompáñanos a celebrar el inicio de nuestra historia!
+      <strong>12 de Septiembre, 2026 — 11:30 AM</strong>
+    </div>
+
+    <!-- FORMULARIO RSVP DE CONFIRMACIÓN CON ENVÍO A TU CORREO -->
+    <div class="form-section">
+      <h3>Confirmar Asistencia (RSVP)</h3>
+      
+      <form id="rsvpForm" action="https://formspree.io/f/mdenyppw" method="POST">
+        
+        <div class="form-group">
+          <label for="nombre">Nombre Principal del Invitado:</label>
+          <input type="text" id="nombre" name="Invitado Principal" placeholder="Ej. Juan Pérez" required>
+        </div>
+
+        <div class="form-group">
+          <label for="asistencia">¿Nos acompañarás?</label>
+          <select id="asistencia" name="Estado de Asistencia" required>
+            <option value="Sí, asistiré con mucho gusto">¡Sí, ahí estaré con mucha alegría!</option>
+            <option value="Lamentablemente no podré asistir">Lamentablemente no podré asistir</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="acompanantes">Número de acompañantes:</label>
+          <select id="acompanantes" name="Cantidad de Acompañantes" required>
+            <option value="0 (Iré solo/a)">Solo yo (0 acompañantes)</option>
+            <option value="1 acompañante">1 acompañante</option>
+            <option value="2 acompañantes">2 acompañantes</option>
+            <option value="3 acompañantes">3 acompañantes</option>
+            <option value="4 acompañantes">4 acompañantes</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="nombres_acompanantes">Nombres de todos los asistentes:</label>
+          <input type="text" id="nombres_acompanantes" name="Nombres de la Familia / Acompañantes" placeholder="Escribe los nombres de quienes asistirán contigo" required>
+        </div>
+
+        <div class="form-group">
+          <label for="mensaje">Palabras o felicitaciones para los novios:</label>
+          <textarea id="mensaje" name="Mensaje o Felicitaciones" rows="3" placeholder="Escríbenos un mensaje especial o alguna restricción alimenticia..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">Enviar Confirmación </button>
+      </form>
+
+      <!-- Opción alternativa por Mailto si lo prefieren -->
+     <!--<div class="direct-email-option">
+        ¿Prefieres redactar un correo directo? <a id="mailtoLink" href="mailto:tu-correo@gmail.com?subject=Confirmacion%20de%20Asistencia%20-%20Boda%20Raquel%20y%20Marlon">Haz clic aquí para enviar un e-mail</a>.
+      </div>-->
+    </div>
+
+    <!-- PANTALLA DE AGRADECIMIENTO TRAS CONFIRMAR -->
+    <div id="thankYouMessage" class="thank-you-message">
+      <h2>¡Gracias por Acompañarnos!</h2>
+      <div class="thank-you-card">
+        <p>Tu confirmación y los nombres de tus acompañantes han sido enviados exitosamente por correo electrónico.</p>
+        <p style="margin-top: 15px; font-weight: 600; color: var(--primary-dark); font-size: 1.5rem;">— Raquel & Marlon —</p>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // Generar animación de pétalos blancos y flores celestes estilo orquídea
+    const petalsContainer = document.getElementById('petals');
+    const numberOfPetals = 26;
+    const numberOfFlowers = 6;
+
+    for (let i = 0; i < numberOfPetals; i++) {
+      const petal = document.createElement('div');
+      petal.classList.add('petal');
+      const size = Math.random() * 12 + 10;
+      petal.style.width = `${size}px`;
+      petal.style.height = `${size * 1.4}px`;
+      petal.style.left = `${Math.random() * 100}%`;
+      const duration = Math.random() * 6 + 6;
+      const delay = Math.random() * 7;
+      petal.style.animationDuration = `${duration}s, 3.5s`;
+      petal.style.animationDelay = `${delay}s, ${delay}s`;
+      petalsContainer.appendChild(petal);
+    }
+
+    const flowers = ['🌸', '💐', '🌺', '🍃'];
+    for (let i = 0; i < numberOfFlowers; i++) {
+      const fl = document.createElement('div');
+      fl.classList.add('flower-icon');
+      fl.innerHTML = flowers[Math.floor(Math.random() * flowers.length)];
+      fl.style.left = `${Math.random() * 95}%`;
+      const duration = Math.random() * 8 + 7;
+      const delay = Math.random() * 5;
+      fl.style.animationDuration = `${duration}s, 4s`;
+      fl.style.animationDelay = `${delay}s, ${delay}s`;
+      petalsContainer.appendChild(fl);
+    }
+
+    // Manejar envío automático del formulario
+    const form = document.getElementById('rsvpForm');
+    const thankYou = document.getElementById('thankYouMessage');
+    const formSection = document.querySelector('.form-section');
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const formData = new FormData(form);
+
+      if (form.action.includes("TU_FORM_ID")) {
+        formSection.style.display = 'none';
+        thankYou.style.display = 'block';
+        return;
+      }
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          formSection.style.display = 'none';
+          thankYou.style.display = 'block';
+        } else {
+          alert('Ocurrió un error al enviar la confirmación. Por favor intenta de nuevo.');
+        }
+      } catch (error) {
+        alert('Error de conexión al enviar el correo.');
+      }
+    });
+
+    // Generar ramos de flores cayendo junto con los pétalos
+const bouquets = ['💐', '🌸', '🪷', '🤍', '🕊️'];
+const numBouquets = 12;
+
+for (let i = 0; i < numBouquets; i++) {
+  const bq = document.createElement('div');
+  bq.classList.add('flower-bouquet');
+  bq.innerHTML = bouquets[Math.floor(Math.random() * bouquets.length)];
+  bq.style.left = `${Math.random() * 95}%`;
+  
+  const duration = Math.random() * 8 + 7;
+  const delay = Math.random() * 6;
+  
+  bq.style.animationDuration = `${duration}s, 4.5s`;
+  bq.style.animationDelay = `${delay}s, ${delay}s`;
+  
+  document.getElementById('rainContainer').appendChild(bq);
+}
+  </script>
+
+</body>
+</html>
